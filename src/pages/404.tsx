@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-function Home({ }) {
+function Page({ }) {
   return <>
     <div className="container text-center">
       <h1>404 - Page not found</h1>
@@ -10,4 +10,4 @@ function Home({ }) {
   </>
 }
 
-export default Home;
+export default Page;
