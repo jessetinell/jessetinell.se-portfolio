@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/layouts/*": [
+        "src/layouts/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/db": [
+        "src/services/db"
+      ],
+      "@/styled-components": [
+        "src/styles/styled-components/index"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/pages/api/projects.jsx",
+    "src/pages/api/portfolios.jsx",
+    "src/pages/api/technologies.jsx"
+  ]
+}

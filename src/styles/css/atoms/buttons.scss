@@ -1,0 +1,52 @@
+/* == Global button properties == */
+%button-properties {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+%button-hover {
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+@mixin button($hoverColor) {
+  padding: 1em 3.1em;
+  display: inline-block;
+  border: 0;
+  border-radius: 6px;
+  margin: 3px 0; /* Add a small margin */
+  @extend %button-properties;
+  @extend %button-hover;
+
+  a {
+    @extend %button-properties;
+
+    &:hover {
+      @extend %button-properties;
+    }
+  }
+
+  &:hover {
+    background-color: $hoverColor;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+/*-------------------------------------*/
+//  OUR BUTTON STYLES
+.button {
+  background-color: #4d92fa;
+  @include button(#4d92fa);
+}
+
+/*-------------------------------------*/
+//  WIDTHS
+.button--full {
+  width: 100%;
+}
