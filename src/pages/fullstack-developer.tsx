@@ -6,13 +6,6 @@ import styled from 'styled-components'
 import { Content } from '@/styled-components'
 import ProjectsTable from '@/components/ProjectsTable'
 
-const Container = styled.div`
-//width:900px;
-`
-const Hero = styled.div`
-
-`
-
 const HeroContainer = styled.div`
 display:flex;
 justify-content:space-between;
@@ -59,7 +52,7 @@ function Home({ }) {
   useEffect(() => {
 
     function getProjects() {
-      // Todo - better error handling
+      // Todo - error handling
       axios.get('/api/portfolios')
         .then(response => {
           if (response.status === 200) {
@@ -79,33 +72,31 @@ function Home({ }) {
     <Head>
       <title>Fullstack Developer in Stockholm, Sweden</title>
     </Head>
-    <Hero>
-      <Container className="container">
-        <HeroContainer>
-          <div>
-            <h1>
-              Portfolio
+    <div className="container">
+      <HeroContainer>
+        <div>
+          <h1>
+            Portfolio
               <H1Sub className="light-text">
-                As a fullstack Developer
+              As a fullstack Developer
               </H1Sub>
-            </h1>
-          </div>
+          </h1>
+        </div>
 
-          <div>
-            <VideoContainer>
-              <video autoPlay muted loop playsInline>
-                <source src="/videos/codin.mp4" type="video/mp4" />
-              </video>
-            </VideoContainer>
-          </div>
-        </HeroContainer>
-        <br />
-        <Content>
-          <MobileWarning>The table is not optimized for mobile. Scroll right/left 👇 🙃</MobileWarning>
-          <ProjectsTable projects={projects} />
-        </Content>
-      </Container>
-    </Hero>
+        <div>
+          <VideoContainer>
+            <video autoPlay muted loop playsInline>
+              <source src="/videos/codin.mp4" type="video/mp4" />
+            </video>
+          </VideoContainer>
+        </div>
+      </HeroContainer>
+      <br />
+      <Content>
+        <MobileWarning>The table is not optimized for mobile. Scroll right/left 👇 🙃</MobileWarning>
+        <ProjectsTable projects={projects} />
+      </Content>
+    </div>
   </>
 }
 
